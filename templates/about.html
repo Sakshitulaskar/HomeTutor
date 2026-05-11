@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<section class="about-section">
+
+    <div class="about-left">
+
+        <h1>
+            About HomeTutor
+        </h1>
+
+        <p>
+
+            HomeTutor helps students connect with trusted
+            and experienced tutors for better learning experience.
+
+        </p>
+
+        <p>
+
+            Our platform provides flexible learning,
+            expert teachers, and personalized education
+            at affordable fees.
+
+        </p>
+
+        <div class="about-features">
+
+            <div class="about-card">
+
+                Expert Tutors
+
+            </div>
+
+            <div class="about-card">
+
+                Flexible Timing
+
+            </div>
+
+            <div class="about-card">
+
+                Affordable Fees
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="about-right">
+
+        <img src="{% static 'images/about.avif' %}"
+             alt="About">
+
+    </div>
+
+</section>
+
+{% endblock %}

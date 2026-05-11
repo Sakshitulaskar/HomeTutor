@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+<section class="login-page">
+
+    <div class="login-image">
+
+        <img src="{% static 'images/register.avif' %}"
+             alt="Register">
+
+    </div>
+
+
+    <div class="login-form-section">
+
+        <form method="POST"
+              class="modern-form">
+
+            {% csrf_token %}
+
+            <h2>
+                Create Account
+            </h2>
+
+            <p>
+                Join HomeTutor and start your learning journey.
+            </p>
+
+            <input type="text"
+                   name="username"
+                   placeholder="Username"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Email"
+                   required>
+            
+            <select name="role"
+        required>
+
+    <option value="">
+        Select Role
+    </option>
+
+    <option value="Student">
+        Student
+    </option>
+
+    <option value="Tutor">
+        Tutor
+    </option>
+
+</select>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Password"
+                   required>
+
+            <button type="submit">
+
+                Register
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

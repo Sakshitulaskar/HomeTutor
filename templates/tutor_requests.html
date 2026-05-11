@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Requests
+{% endblock %}
+
+{% block content %}
+
+<section class="tutors-section">
+
+    <h1>
+        Student Requests
+    </h1>
+
+    <div class="tutors-container">
+
+        {% for req in requests %}
+
+        <div class="tutor-card">
+
+            <div class="tutor-content">
+
+                <h2>
+                    {{ req.student.username }}
+                </h2>
+
+                <p>
+                    {{ req.message }}
+                </p>
+
+                <p>
+                    Status:
+                    {{ req.status }}
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{% url 'accept_request' req.id %}"
+                       class="hero-btn">
+
+                        Accept
+
+                    </a>
+
+                    <a href="{% url 'reject_request' req.id %}"
+                       class="hero-btn-outline">
+
+                        Reject
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

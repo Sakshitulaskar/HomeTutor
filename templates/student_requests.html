@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Requests
+{% endblock %}
+
+{% block content %}
+
+<section class="tutors-section">
+
+    <h1>
+        My Requests
+    </h1>
+
+    <div class="tutors-container">
+
+        {% for req in requests %}
+
+        <div class="tutor-card">
+
+            <div class="tutor-content">
+
+                <h2>
+                    {{ req.tutor.user.username }}
+                </h2>
+
+                <p>
+                    Subject:
+                    {{ req.tutor.subject }}
+                </p>
+
+                <p>
+                    {{ req.message }}
+                </p>
+
+                <p>
+                    Status:
+                    <strong>
+                        {{ req.status }}
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

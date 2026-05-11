@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create Tutor Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <form method="POST"
+          enctype="multipart/form-data"
+          class="modern-form">
+
+        {% csrf_token %}
+
+        <h2>
+            Create Tutor Profile
+        </h2>
+
+        <input type="text"
+               name="subject"
+               placeholder="Subject"
+               required>
+
+        <input type="text"
+               name="qualification"
+               placeholder="Qualification"
+               required>
+
+        <input type="number"
+               name="experience"
+               placeholder="Experience"
+               required>
+
+        <input type="number"
+               name="fees"
+               placeholder="Fees"
+               required>
+
+        <input type="text"
+               name="availability"
+               placeholder="Availability"
+               required>
+
+        <input type="text"
+               name="mode"
+               placeholder="Mode"
+               required>
+
+        <input type="text"
+               name="city"
+               placeholder="City"
+               required>
+
+        <input type="text"
+               name="area"
+               placeholder="Area"
+               required>
+
+        <input type="file"
+               name="image"
+               required>
+
+        <button type="submit">
+
+            Create Profile
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

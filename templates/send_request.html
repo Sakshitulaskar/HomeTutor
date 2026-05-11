@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Send Request
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <form method="POST"
+          class="modern-form">
+
+        {% csrf_token %}
+
+        <h2>
+            Send Request
+        </h2>
+
+        <textarea name="message"
+                  placeholder="Write your message..."
+                  required>
+
+        </textarea>
+
+        <button type="submit">
+
+            Send Request
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

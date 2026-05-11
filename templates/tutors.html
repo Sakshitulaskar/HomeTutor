@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Tutors
+{% endblock %}
+
+{% block content %}
+
+<section class="tutors-section">
+
+    <h1>
+        Our Tutors
+    </h1>
+    
+<form method="GET"
+      class="search-form">
+
+    <input type="text"
+           name="search"
+           placeholder="Search subject or tutor">
+
+    <input type="number"
+           name="max_fees"
+           placeholder="Max Fees">
+
+    <input type="number"
+           name="min_experience"
+           placeholder="Min Experience">
+
+    <input type="text"
+       name="city"
+       placeholder="City">
+
+<input type="text"
+       name="area"
+       placeholder="Area">
+
+    <button type="submit">
+
+        Filter
+
+    </button>
+
+</form>
+
+    <div class="tutors-container">
+
+        {% for tutor in tutors %}
+
+       <a href="{% url 'tutor_detail' tutor.id %}"
+   class="tutor-link">
+
+<div class="tutor-card">
+
+            <img src="{{ tutor.image.url }}"
+                 alt="Tutor">
+
+            <div class="tutor-content">
+
+                <h2>
+                    {{ tutor.user.username }}
+                </h2>
+
+                <p>
+                    Subject: {{ tutor.subject }}
+                </p>
+
+                <p>
+                    Qualification: {{ tutor.qualification }}
+                </p>
+
+                <p>
+                    Experience: {{ tutor.experience }} Years
+                </p>
+
+                <p>
+                    Fees: ₹{{ tutor.fees }}/month
+                </p>
+
+                <p>
+    Availability:
+    {{ tutor.availability }}
+</p>
+
+<p>
+    Mode:
+    {{ tutor.mode }}
+</p>
+
+<p>
+    Location:
+    {{ tutor.city }},
+    {{ tutor.area }}
+</p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

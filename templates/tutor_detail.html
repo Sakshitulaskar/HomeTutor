@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Tutor Detail
+{% endblock %}
+
+{% block content %}
+
+<section class="detail-section">
+
+    <div class="detail-card">
+
+        <div class="detail-image">
+
+            <img src="{{ tutor.image.url }}"
+                 alt="Tutor">
+
+        </div>
+
+
+        <div class="detail-content">
+
+            <h1>
+                {{ tutor.user.username }}
+            </h1>
+
+            <p>
+                <strong>Subject:</strong>
+                {{ tutor.subject }}
+            </p>
+
+            <p>
+                <strong>Qualification:</strong>
+                {{ tutor.qualification }}
+            </p>
+
+            <p>
+                <strong>Experience:</strong>
+                {{ tutor.experience }} Years
+            </p>
+
+            <p>
+                <strong>Fees:</strong>
+                ₹{{ tutor.fees }}/month
+            </p>
+
+            <p>
+    <strong>Availability:</strong>
+    {{ tutor.availability }}
+</p>
+
+<p>
+    <strong>Mode:</strong>
+    {{ tutor.mode }}
+</p>
+
+<p>
+    <strong>Location:</strong>
+    {{ tutor.city }},
+    {{ tutor.area }}
+</p>
+
+            <a href="{% url 'send_request' tutor.id %}"
+   class="hero-btn">
+
+    Send Request
+
+</a>
+    </div>
+
+</section>
+
+<hr style="margin:40px 0;">
+
+
+<h2 style="margin-bottom:20px;">
+    Reviews
+</h2>
+
+
+<form method="POST"
+      class="review-form">
+
+    {% csrf_token %}
+
+    <input type="number"
+           name="rating"
+           placeholder="Rating (1-5)"
+           min="1"
+           max="5"
+           required>
+
+    <textarea name="comment"
+              placeholder="Write review..."
+              required>
+
+    </textarea>
+
+    <button type="submit"
+            class="hero-btn">
+
+        Submit Review
+
+    </button>
+
+</form>
+
+
+<div class="reviews-container">
+
+    {% for review in reviews %}
+
+    <div class="review-card">
+
+        <h3>
+            {{ review.student.username }}
+        </h3>
+
+        <p>
+            Rating:
+            ⭐ {{ review.rating }}/5
+        </p>
+
+        <p>
+            {{ review.comment }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}

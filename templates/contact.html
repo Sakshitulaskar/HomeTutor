@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-section">
+
+    <div class="contact-left">
+
+        <h1>
+            Contact Us
+        </h1>
+
+        <p>
+
+            Have questions or need help finding tutors?
+            Get in touch with us anytime.
+
+        </p>
+
+
+        <div class="contact-info">
+
+            <div class="contact-box">
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    hometutor@gmail.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+                    +91 9876543210
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    Raipur, Chhattisgarh
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="contact-right">
+
+        <img src="{% static 'images/contact.avif' %}"
+             alt="Contact">
+
+    </div>
+
+</section>
+
+{% endblock %}

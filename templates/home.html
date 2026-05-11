@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-section">
+
+    <div class="hero-left">
+
+        <h1>
+            Find Trusted Home Tutors
+        </h1>
+
+        <p>
+            Learn from experienced tutors at your home
+            with flexible timings and affordable fees.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href=""
+               class="hero-btn">
+
+                Find Tutors
+
+            </a>
+
+            <a href=""
+               class="hero-btn-outline">
+
+                Join Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-right">
+
+        <img src="{% static 'images/tutor.png' %}"
+             alt="Tutor">
+
+    </div>
+
+</section>
+
+{% endblock %}
