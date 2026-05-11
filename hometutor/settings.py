@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-js(ygra85126-fpylq&&&es+3k91i20rrpb)et$@oj$qi40p%h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'hometutor-im3j.onrender.com'
+]
 
 
 # Application definition
